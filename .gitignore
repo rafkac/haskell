@@ -1,0 +1,42 @@
+# Haskell / GHC build artifacts
+*.hi
+*.o
+*.dyn_hi
+*.dyn_o
+*.p_hi
+*.p_o
+*.prof
+*.aux
+*.hp
+*.eventlog
+*.tix
+
+# GHCi history
+.ghci_history
+
+# Compiled binaries (output of `ghc lessonN.hs`, no extension)
+L*/lesson*
+!L*/lesson*.hs
+!L*/lesson*.md
+
+# Cabal
+dist/
+dist-newstyle/
+.cabal-sandbox/
+cabal.sandbox.config
+*.cabal.local
+
+# Stack
+.stack-work/
+stack.yaml.lock
+
+# HLS / editor
+.hie/
+*.swp
+*~
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
