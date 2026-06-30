@@ -1,7 +1,8 @@
-# haskell-starter
+# haskell learning repo
 
-My notes and exercises while learning Haskell from scratch. Each lesson lives in
-its own directory (`L1`, `L2`, …) with the lesson source, exercise solutions, and
+I scored 95% from uni's Functional Programming module with Haskell. Now I am back to practicing it as I am looking into Haskell full-time positions.
+
+Each lesson lives in its own directory (`L1`, `L2`, …) with the lesson source, exercise solutions, and 
 notes.
 
 ## Lessons
