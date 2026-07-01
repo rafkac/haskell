@@ -1,4 +1,5 @@
 import Distribution.Simple.Utils (xargs)
+import Text.XHtml (start)
 -- =====================================================================
 -- LESSON 2 — EXERCISES
 -- =====================================================================
@@ -140,4 +141,18 @@ zipSum (x:xs) (y:ys) = (x + y) : zipSum xs ys
 --     This one is genuinely tricky. Attempt it; partial credit for trying.
 --     Hint: a helper that accumulates the current run may help — or use
 --     a built-in like `span` (look it up with :t span) if you want a shortcut.
--- runs :: [Int] -> [[Int]]
+
+-- helper function to get repeating ints from the start
+repeated :: [Int] -> [Int]
+repeated [] = []
+repeated [x] = [x]
+repeated (x:y:rest)
+    | x == y    = x : repeated (y:rest)
+    | otherwise = [x]
+
+runs :: [Int] -> [[Int]]
+runs [] = []
+runs xs = let run  = repeated xs
+                rest = drop (length run) xs
+            in run : runs rest
+
