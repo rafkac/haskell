@@ -153,6 +153,6 @@ repeated (x:y:rest)
 runs :: [Int] -> [[Int]]
 runs [] = []
 runs xs = let run  = repeated xs
-                rest = drop (length run) xs
-            in run : runs rest
+              rest = drop (length run) xs
+          in run : runs rest
 
