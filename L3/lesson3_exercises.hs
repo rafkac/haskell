@@ -23,9 +23,6 @@ tripleAll :: [Int] -> [Int]
 tripleAll = map (*3)
 
 
-
-
-
 -- A2. Turn a list of Ints into their String forms. (Hint: `show`.)
 --     showAll [1,2,3] == ["1","2","3"]
 -- showAll :: [Int] -> [String]
