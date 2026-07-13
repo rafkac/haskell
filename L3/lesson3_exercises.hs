@@ -48,22 +48,29 @@ negateAll = map (negate)
 
 -- B1. Keep only the positive numbers.  positives [-1,2,-3,4] == [2,4]
 -- positives :: [Int] -> [Int]
+positives :: [Int] -> [Int]
+positives = filter (>0)
 
 
 -- B2. Keep only strings longer than n characters.
 --     longerThan 2 ["a","abc","hi","hello"] == ["abc","hello"]
--- longerThan :: Int -> [String] -> [String]
+longerThan :: Int -> [String] -> [String]
+longerThan x = filter ((> x) . length)
+
 
 
 -- B3. Remove all spaces from a string. (A String is [Char]; filter it.)
 --     removeSpaces "a b c" == "abc"
 -- removeSpaces :: String -> String
+removeSpaces :: String -> String
+removeSpaces = filter (/= ' ')
 
 
 -- B4. Keep numbers divisible by BOTH 3 and 5.
 --     divBy15 [1..30] == [15,30]
 --     Hint: a lambda combining two conditions with &&.
--- divBy15 :: [Int] -> [Int]
+divBy15 :: [Int] -> [Int]
+divBy15 = filter (\x -> x `mod` 3 == 0 && x `mod` 5 == 0)
 
 
 -- ---- C. fold --------------------------------------------------------
