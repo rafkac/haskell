@@ -78,25 +78,31 @@ divBy15 = filter (\x -> x `mod` 3 == 0 && x `mod` 5 == 0)
 
 -- C1. Sum a list of Doubles with a fold.  (Your Lesson 2 sumDoubles, redone.)
 -- sumD :: [Double] -> Double
-
+sumD :: [Double] -> Double
+sumD = foldr (+) 0
 
 -- C2. Find the maximum of a NON-empty list using foldr1.
 --     (foldr1 is like foldr but uses the last element as the seed, so no
 --      initial value needed. Look it up: :t foldr1 and :t max)
 --     maxViaFold [3,9,2,9,1] == 9
 -- maxViaFold :: [Int] -> Int
+maxViaFold :: [Int] -> Int
+maxViaFold = foldl1 max
 
 
 -- C3. Count how many elements satisfy a predicate, using a fold.
 --     countIf even [1..10] == 5
 --     Note the type: it takes the predicate as an argument (higher-order!).
 -- countIf :: (a -> Bool) -> [a] -> Int
-
+countIf :: (a -> Bool) -> [a] -> Int
+countIf cond = foldl (\acc x -> if (cond x) then acc+1 else acc) 0
 
 -- C4. Concatenate a list of strings into one, using a fold.
 --     concatAll ["ab","cd","ef"] == "abcdef"
 --     (Yes, `concat` exists — but build it with foldr (++) here.)
 -- concatAll :: [String] -> String
+concatAll :: [String] -> String
+concatAll = foldr (++) ""
 
 
 -- ---- D. Composition & combining the tools ---------------------------
