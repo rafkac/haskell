@@ -111,12 +111,16 @@ concatAll = foldr (++) ""
 --     map and sum. Try to write it point-free.
 --     sumOfSquares [1,2,3] == 14
 -- sumOfSquares :: [Int] -> Int
+sumOfSquares :: [Int] -> Int
+sumOfSquares = sum . map (\x -> x * x)
 
 
 -- D2. countVowels: how many vowels (a,e,i,o,u) are in a string?
 --     countVowels "hello world" == 3
 --     Hint: filter to the vowels, then length. Compose them.
 -- countVowels :: String -> Int
+countVowels :: String -> Int
+countVowels = length . filter (`elem` "aeiouAEIOU")
 
 
 -- D3. zipSum revisited: reimplement Lesson 2's zipSum using zipWith
