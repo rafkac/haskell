@@ -126,7 +126,9 @@ countVowels = length . filter (`elem` "aeiouAEIOU")
 -- D3. zipSum revisited: reimplement Lesson 2's zipSum using zipWith
 --     instead of hand recursion. One line.
 --     zipSum [1,2,3] [10,20,30,40] == [11,22,33]
--- zipSum :: [Int] -> [Int] -> [Int]
+zipSum :: [Int] -> [Int] -> [Int]
+zipSum = zipWith (+)
+
 
 
 -- D4. average of a list of Doubles: sum / length. Careful — length gives
