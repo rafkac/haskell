@@ -145,7 +145,8 @@ average xs = sum xs / fromIntegral (length xs)
 -- E1. myReverse using a fold.  Think about which fold and which combiner.
 --     myReverse [1,2,3] == [3,2,1]
 --     Hint: foldl (\acc x -> x : acc) [] ... trace it to see why left, not right.
--- myReverse :: [a] -> [a]
+myReverse :: [a] -> [a]
+myReverse = foldl (\acc x -> x : acc) []
 
 
 -- E2. Reimplement `filter` yourself using foldr (don't use the built-in filter).
