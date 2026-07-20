@@ -136,6 +136,8 @@ zipSum = zipWith (+)
 --     `fromIntegral` (:t fromIntegral) to convert.
 --     average [1,2,3,4] == 2.5
 -- average :: [Double] -> Double
+average :: [Double] -> Double
+average xs = sum xs / fromIntegral (length xs)
 
 
 -- ---- E. Stretch -----------------------------------------------------
